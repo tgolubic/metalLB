@@ -1,0 +1,8 @@
+# instalacija MetalLB putem manifest file-a; kreira se Namespace=metallb-system
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.10/config/manifests/metallb-native.yaml
+# IP pool definicija
+kubectl -f apply metal-lb-ip-pool.yaml -n metallb-system
+# L2Advertisement
+kubectl -f apply L2Advertisement.yaml -n metallb-system
+# provjera instaliranih resursa
+kubectl get all -n metallb-system
